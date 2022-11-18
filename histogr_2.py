@@ -8,7 +8,7 @@ import seaborn as sns
 print("Setup Complete")
 # %%
 
-cancer_filepath = (r"C:\Users\vitaly.flerin\Desktop\python\sea\cancer.csv")
+cancer_filepath = (r"C:\Users\vitaly.flerin\....\python\sea\cancer.csv")
 cancer_data = pd.read_csv(cancer_filepath, index_col = 'Id', )
 cancer_data.head(10)
 
