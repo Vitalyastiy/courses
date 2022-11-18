@@ -8,7 +8,7 @@ import seaborn as sns
 print("Setup Complete")
 # %%
 # Path of the file to read
-insurance_filepath = r"C:\Users\vitaly.flerin\Desktop\python\sea\insurance.csv"
+insurance_filepath = r"C:\Users\vitaly.flerin\....\python\sea\insurance.csv"
 # %%
 # Read the file into a variable insurance_data
 insurance_data = pd.read_csv(insurance_filepath)
