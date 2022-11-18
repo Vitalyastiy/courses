@@ -8,7 +8,7 @@ print("Setup Complete")
 
 # %%
 # Path of the file to read
-iris_filepath = (r"C:\Users\vitaly.flerin\Desktop\python\sea\iris.csv")
+iris_filepath = (r"C:\Users\vitaly.flerin\.....\python\sea\iris.csv")
 
 # %%
 # Read the file into a variable iris_data
