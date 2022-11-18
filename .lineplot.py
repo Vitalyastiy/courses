@@ -11,7 +11,7 @@ print("Setup Complete")
 
 # %%
 # Path of the file to read
-spotify_filepath = r"C:\Users\vitaly.flerin\Desktop\spotify.csv"
+spotify_filepath = r"C:\Users\.....\Desktop\spotify.csv"
 
 # Read the file into a variable spotify_data
 spotify_data = pd.read_csv(spotify_filepath, index_col="Date", parse_dates=True)
