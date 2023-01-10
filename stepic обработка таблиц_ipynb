@@ -1,0 +1,357 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyM4Cn5i0D++0KlIISrnqKJw",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/Vitalyastiy/courses/blob/main/stepic%20%D0%BE%D0%B1%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D0%B0%20%D1%82%D0%B0%D0%B1%D0%BB%D0%B8%D1%86_ipynb\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 2,
+      "metadata": {
+        "id": "QNze7sc-GL_o"
+      },
+      "outputs": [],
+      "source": [
+        "import pandas as pd\n",
+        "import matplotlib.pyplot as plt"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "mar=pd.Series({\"6\" : 5, \"3\":4, \"8\":3, \"4\":1})\n",
+        "plt.bar(mar.index,height = mar)\n",
+        "plt.show()"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 265
+        },
+        "id": "jIckqV30GonU",
+        "outputId": "a0cf233e-6a22-445e-b990-b2dabf1a9294"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "display_data",
+          "data": {
+            "text/plain": [
+              "<Figure size 432x288 with 1 Axes>"
+            ],
+            "image/png": "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\n"
+          },
+          "metadata": {
+            "needs_background": "light"
+          }
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def is_palindrome(word):\n",
+        "    word_lower = word.lower()\n",
+        "    word_lower_back = word_lower[::-1]\n",
+        "    return word_lower == word_lower_back\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 38
+        },
+        "id": "8nw8OZflHIMU",
+        "outputId": "1b35c11a-200e-4ebf-b760-fc2fc490aaeb"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "'Казак'"
+            ],
+            "application/vnd.google.colaboratory.intrinsic+json": {
+              "type": "string"
+            }
+          },
+          "metadata": {},
+          "execution_count": 5
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "is_palindrome('Казауук')"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "pSek4zVNHVHP",
+        "outputId": "78c2f3bf-0cf8-473c-f526-edf927741b24"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "False"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 8
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def is_not_palindrome(word):\n",
+        "    return not is_palindrome(word)"
+      ],
+      "metadata": {
+        "id": "a2GIYS0CI4nI"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "is_not_palindrome('жопа')"
+      ],
+      "metadata": {
+        "id": "a8etvJ8hI8G4",
+        "outputId": "67806e26-9c5b-4e8e-80c0-663e476cfdc4",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        }
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "True"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 10
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "df = pd.read_csv(\"https://stepik.org/media/attachments/lesson/802033/students.csv\")"
+      ],
+      "metadata": {
+        "id": "uKOiYgAkcAD5"
+      },
+      "execution_count": 3,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "df[\"Weight\"].describe()"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "f4RUrFMwcAIG",
+        "outputId": "51a40a72-373f-43ba-d5a1-3babb06363bc"
+      },
+      "execution_count": 9,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "count    157.000000\n",
+              "mean      64.031847\n",
+              "std       16.502300\n",
+              "min        3.000000\n",
+              "25%       53.000000\n",
+              "50%       60.000000\n",
+              "75%       71.000000\n",
+              "max      120.000000\n",
+              "Name: Weight, dtype: float64"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 9
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "df.columns"
+      ],
+      "metadata": {
+        "id": "B2OV28RjcAdX"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "df['Rock paper scissors'].value_counts()"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "VE0HXa1fduTZ",
+        "outputId": "712af205-5521-4575-8f38-c51c14fc67a9"
+      },
+      "execution_count": 11,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "Ножницы    88\n",
+              "Камень     60\n",
+              "Бумага     38\n",
+              "Name: Rock paper scissors, dtype: int64"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 11
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "df[\"Weight\"].head(1)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "ym21fYilhO5x",
+        "outputId": "054900f7-bd44-4bd9-eb70-80a48b5c20dc"
+      },
+      "execution_count": 10,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "0    64.0\n",
+              "Name: Weight, dtype: float64"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 10
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "df[df[\"Weight\"]>df[\"Weight\"].mean()].shape"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "kNEeLMZ5v288",
+        "outputId": "65d961cc-1e06-4cfd-d4d3-097248e3cba9"
+      },
+      "execution_count": 9,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "(63, 48)"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 9
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "df.columns"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "nh3hCCIY7OAe",
+        "outputId": "df927c73-8cc0-4471-cdea-a23468ccd712"
+      },
+      "execution_count": 11,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "Index(['Age', 'Growth', 'Shoe size', 'Course number', 'Year of birth',\n",
+              "       'Friend number', 'Russian rating', 'Maths rating', 'Physics rating',\n",
+              "       'Computer science rating', 'Chemistry rating', 'Literature rating',\n",
+              "       'History rating', 'Geography rating', 'Biology rating',\n",
+              "       'Foreign language rating', 'Social science rating',\n",
+              "       'Distance to home km', 'Minutes to first class', 'Children number',\n",
+              "       'Removed teeth', 'Weight', 'Glasses', 'Sex',\n",
+              "       'Problems in last semester', 'Coin', 'Rock paper scissors', 'Animal',\n",
+              "       'Month of birthday', 'Your rating in university', 'Fastfood',\n",
+              "       'Height of 5000 mm', 'Width of 5000 mm', 'Putin age', 'Army', 'Hostel',\n",
+              "       'Hair length', 'Floor number', 'Social network duration min',\n",
+              "       'Chocolate', 'City population', 'Strange people', 'Your insitute',\n",
+              "       'Brother-sister', 'Plane seat', 'MIddle and index finger',\n",
+              "       'Middle and ring finger', 'Middle and little finger'],\n",
+              "      dtype='object')"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 11
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [],
+      "metadata": {
+        "id": "_IFFEG0T7Ttc"
+      },
+      "execution_count": null,
+      "outputs": []
+    }
+  ]
+}
